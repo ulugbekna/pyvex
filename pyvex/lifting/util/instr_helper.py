@@ -21,9 +21,9 @@ class Instruction:
     You may want to subclass this for your architecture, and add arch-specific handling
     for parsing, argument resolution, etc, and have instructions subclass that instead.
 
-    The core parsing functionality is done via a "bit format".  Each instruction should be a subclass of Instruction,
-    and will be parsed by comparing bits in the provided bitstream to symbols in the bit_format member of the class.
-    Bit formats are strings of symbols, like those you'd find in an ISA document, such as "0010rrrrddddffmm"
+    The core parsing functionality is done via a "bin format".  Each instruction should be a subclass of Instruction,
+    and will be parsed by comparing bits in the provided bitstream to symbols in the ``bin_format`` member of the class.
+    Bin formats are strings of symbols, like those you'd find in an ISA document, such as "0010rrrrddddffmm"
     0 or 1 specify hard-coded bits that must match for an instruction to match.
     Any letters specify arguments, grouped by letter, which will be parsed and provided as bitstrings in the "data"
     member of the class as a dictionary.
